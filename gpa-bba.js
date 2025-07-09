@@ -1,8 +1,3 @@
-// عند تحميل الصفحة، اجعل الوضع الليلي هو الافتراضي
-if (!document.documentElement.getAttribute('data-theme')) {
-  document.documentElement.setAttribute('data-theme', 'dark');
-}
-
 // دالة تهيئة السمة (الوضع الليلي/النهاري)
 function initTheme() {
     // الحصول على زر تبديل السمة من الصفحة
