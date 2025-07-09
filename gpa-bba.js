@@ -738,7 +738,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class=\"main-stars-row\">
         <div class=\"main-star-block\" id=\"main-star-block-1\">
           <svg class=\"main-star-svg\" viewBox=\"0 0 40 40\"><polygon fill=\"#E53935\" points=\"${setHeptagramPoints(20,20,18,7,7)}\"/></svg>
-          <div class=\"main-star-label\" id=\"main-star-label-1\"></div>
+          <div class="main-star-label" id="main-star-label-1"></div>
         </div>
         <div class=\"main-star-block\" id=\"main-star-block-2\">
           <svg class=\"main-star-svg\" viewBox=\"0 0 40 40\"><polygon fill=\"#E53935\" points=\"${setHeptagramPoints(20,20,18,7,7)}\"/></svg>
@@ -787,6 +787,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, 100);
   }
+
+  injectWarningsFAQ();
+  injectGradingSystemFAQ();
 });
 
 // دالة تقريب المعدل حسب نظام الجبر (تقريب لأقرب منزلتين مع جبر)
@@ -1028,4 +1031,185 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 })();
+
+// حقن سؤال مراحل الإنذارات والفصل الأكاديمي ديناميكياً
+function injectWarningsFAQ() {
+  const warningsSection = document.getElementById('warnings-faq-section');
+  if (!warningsSection) return;
+  warningsSection.innerHTML = `
+    <button class="faq-question"><span>ما هي مراحل الإنذارات والفصل الأكاديمي في الجامعة الأردنية</span></button>
+    <div class="faq-answer">
+      <div class="warnings-tree-root">
+        <div class="warnings-tree-flex-center">
+          <div class="warnings-tree-node warning-stage-red warnings-tree-node-red">
+            <div class="warnings-tree-node-title">عند حصولك على معدل دون 2.0</div>
+            <div class="warnings-tree-node-subtitle">تعطى إنذار أول</div>
+            <div class="tree-label-inside">نهاية الفصل 1</div>
+          </div>
+        </div>
+        <div class="warnings-tree-arrow-down">
+          <span class="warnings-tree-arrow-icon">&#8595;</span>
+        </div>
+        <div class="warnings-tree-node warning-stage-red warnings-tree-node-red">
+          <div class="warnings-tree-node-title">إذا استمر معدلك دون 2.0</div>
+          <div class="warnings-tree-node-subtitle">تعطى إنذار نهائي</div>
+          <div class="tree-label-inside">نهاية الفصل 2</div>
+        </div>
+        <div class="warnings-tree-arrow-down">
+          <span class="warnings-tree-arrow-icon">&#8595;</span>
+        </div>
+        <div class="warnings-tree-svg-container-50">
+          <svg width="100%" height="50" viewBox="0 0 100 50" preserveAspectRatio="none" class="warnings-tree-svg-absolute">
+            <path d="M50,0 C50,25 25,25 25,50" stroke="#007B3A" stroke-width="3.5" fill="none"/>
+            <path d="M50,0 C50,25 75,25 75,50" stroke="#007B3A" stroke-width="3.5" fill="none"/>
+          </svg>
+        </div>
+        <div class="warnings-tree-branch-row warnings-tree-branch-row-custom">
+          <div class="warnings-tree-branch">
+            <div class="warnings-tree-node condition-node">
+              <div class="warnings-tree-condition">معدلك أكبر أو يساوي 1.95 أو أتممت 99 ساعة بنجاح</div>
+              <div class="warnings-tree-result">تبقى تحت الإنذار النهائي</div>
+              <div class="warnings-tree-stage stage-green">نهاية الفصل 3</div>
+            </div>
+          </div>
+          <div class="warnings-tree-branch">
+            <div class="warnings-tree-node condition-node">
+              <div class="warnings-tree-condition">إذا حصلت على معدل أقل من 1.95</div>
+              <div class="warnings-tree-result">تفصل دراسة خاصة لمدة فصل واحد</div>
+              <div class="warnings-tree-stage stage-green">نهاية الفصل 3</div>
+            </div>
+            <div class="warnings-tree-svg-container-50">
+              <svg width="100%" height="50" viewBox="0 0 100 50" preserveAspectRatio="none" class="warnings-tree-svg-absolute">
+                <path d="M50,0 C50,25 25,25 25,50" stroke="#007B3A" stroke-width="3.5" fill="none"/>
+                <path d="M50,0 C50,25 75,25 75,50" stroke="#007B3A" stroke-width="3.5" fill="none"/>
+              </svg>
+            </div>
+            <div class="warnings-tree-branch-row warnings-tree-branch-row-custom">
+              <div class="warnings-tree-branch">
+                <div class="warnings-tree-node condition-node">
+                  <div class="warnings-tree-condition">إذا حصلت على معدل أكبر من أو يساوي 1.75</div>
+                  <div class="warnings-tree-result">تعطى فصل دراسة خاصة ثاني</div>
+                  <div class="warnings-tree-stage stage-green">نهاية الفصل 4</div>
+                </div>
+                <div class="warnings-tree-svg-container-50">
+                  <svg width="100%" height="50" viewBox="0 0 100 50" preserveAspectRatio="none" class="warnings-tree-svg-absolute">
+                    <path d="M50,0 C50,25 25,25 25,50" stroke="#007B3A" stroke-width="3.5" fill="none"/>
+                    <path d="M50,0 C50,25 75,25 75,50" stroke="#007B3A" stroke-width="3.5" fill="none"/>
+                  </svg>
+                </div>
+                <div class="warnings-tree-branch-row warnings-tree-branch-row-custom">
+                  <div class="warnings-tree-branch">
+                    <div class="warnings-tree-node condition-node">
+                      <div class="warnings-tree-condition">إذا حصلت على معدل أكبر من أو يساوي 1.90</div>
+                      <div class="warnings-tree-result">تعطى فصل دراسة خاصة ثالث</div>
+                      <div class="warnings-tree-stage stage-green">نهاية الفصل 5</div>
+                    </div>
+                    <div class="warnings-tree-svg-container-40">
+                      <svg width="100%" height="40" viewBox="0 0 100 40" preserveAspectRatio="none" class="warnings-tree-svg-absolute">
+                        <path d="M50,0 C50,20 50,20 50,40" stroke="#007B3A" stroke-width="3.5" fill="none"/>
+                      </svg>
+                    </div>
+                    <div class="warnings-tree-node condition-node">
+                      <div class="warnings-tree-condition">إذا لم تحصل على معدل 2.0</div>
+                      <div class="warnings-tree-result">تفصل نهائيًا من الجامعة</div>
+                      <div class="warnings-tree-stage stage-green">نهاية الفصل 6</div>
+                    </div>
+                  </div>
+                  <div class="warnings-tree-branch vertical-children">
+                    <div class="warnings-tree-node condition-node">
+                      <div class="warnings-tree-condition">إذا حصلت على معدل أقل من 1.90</div>
+                      <div class="warnings-tree-result">تفصل نهائيًا من الجامعة</div>
+                      <div class="warnings-tree-stage stage-green">نهاية الفصل 5</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="warnings-tree-branch">
+                <div class="warnings-tree-node condition-node">
+                  <div class="warnings-tree-condition">إذا حصلت على معدل أقل من 1.75</div>
+                  <div class="warnings-tree-result">تفصل نهائيًا من الجامعة</div>
+                  <div class="warnings-tree-stage stage-green">نهاية الفصل 4</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="important-notes important-notes-custom">
+        <h3 class="important-notes-title-custom">ملاحظات هامة يجب أن تعلمها</h3>
+        <ul class="important-notes-ul-custom">
+          <li class="important-notes-li-custom">
+            <strong class="important-notes-strong-green">•</strong> في أي مرحلة من المراحل المذكورة سابقاً إذا ارتفع معدلك التراكمي فوق <strong class="important-notes-strong-red">(2.00)</strong> نقطة تُلغى جميع الإنذارات عنك أو تعود إلى الدراسة المنتظمة.
+          </li>
+          <li class="important-notes-li-custom">
+            <strong class="important-notes-strong-green">•</strong> في أي فصل من الفصول الدراسية إذا انخفض معدلك التراكمي دون <strong class="important-notes-strong-red">(1.00)</strong> نقطة تفصل من التخصص (باستثناء فصل قبولك في الجامعة أو في الفصل الصيفي)، وعليك تحويل تخصصك إلى تخصص آخر وإذا كنت قد حولت تخصصك سابقاً تفصل نهائياً من الجامعة.
+          </li>
+          <li class="important-notes-li-custom">
+            <strong class="important-notes-strong-green">•</strong> في الفصل الصيفي لا تُعطى أي إنذارات أكاديمية.
+          </li>
+          <li class="important-notes-li-custom">
+            <strong class="important-notes-strong-green">•</strong> هل تعرف ماذا يعني فصلك إلى الدراسة الخاصة:
+            <ul class="important-notes-sub-ul">
+              <li class="important-notes-sub-li">يعني إيقاف تسجيلك لحين إحضار ولي أمرك وتوقيع تعهد وإقرار عند مسجل كليتك يبين فيه وضعك الأكاديمي.</li>
+              <li class="important-notes-sub-li">يعني مضاعفة رسومك الجامعية، أما الطالب المقبول ضمن البرنامج الموازي لا تتضاعف رسومه الجامعية ولكنه يخضع لمراحل الدراسة الخاصة.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  `;
+}
+
+function injectGradingSystemFAQ() {
+  const gradingSection = document.getElementById('grading-system-faq-section');
+  if (!gradingSection) return;
+  gradingSection.innerHTML = `
+    <button class="faq-question"><span>ما هو نظام العلامات والتقدير في الجامعة الأردنية؟</span></button>
+    <div class="faq-answer">
+      <p>يعتمد نظام العلامات والتقدير في الجامعة الأردنية على الرموز والنقاط والتقديرات التالية:</p>
+      <h4 style="margin-bottom:8px; color:#007B3A;">جدول الرموز والنقاط:</h4>
+      <table class="example-table small-table">
+        <thead>
+          <tr>
+            <th>العلامة</th>
+            <th>النقاط</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>أ</td><td>4</td></tr>
+          <tr><td>أ-</td><td>3.75</td></tr>
+          <tr><td>ب+</td><td>3.5</td></tr>
+          <tr><td>ب</td><td>3</td></tr>
+          <tr><td>ب-</td><td>2.75</td></tr>
+          <tr><td>ج+</td><td>2.5</td></tr>
+          <tr><td>ج</td><td>2</td></tr>
+          <tr><td>ج-</td><td>1.75</td></tr>
+          <tr><td>د+</td><td>1.5</td></tr>
+          <tr><td>د</td><td>1.25</td></tr>
+          <tr><td>د-</td><td>1</td></tr>
+          <tr><td>هـ</td><td>0.50</td></tr>
+        </tbody>
+      </table>
+      <div style="margin:10px 0 16px 0; color:#E53935; font-weight:bold;">
+        ملاحظة: <span style="color:#222; font-weight:normal;">الرموز <strong>هـ</strong> و <strong>د-</strong> راسب في المادة.</span>
+      </div>
+      <h4 style="margin:18px 0 8px 0; color:#007B3A;">جدول التقديرات:</h4>
+      <table class="example-table small-table">
+        <thead>
+          <tr>
+            <th>المعدل التراكمي</th>
+            <th>التقدير</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>3.65 – 4</td><td>ممتاز</td></tr>
+          <tr><td>3.00 – 3.64</td><td>جيد جداً</td></tr>
+          <tr><td>2.50 – 2.99</td><td>جيد</td></tr>
+          <tr><td>2.00 – 2.49</td><td>مقبول</td></tr>
+          <tr><td>دون 2.00</td><td>ضعيف</td></tr>
+        </tbody>
+      </table>
+    </div>
+  `;
+}
 
