@@ -4080,3 +4080,10 @@ button:hover {
 .important-notes-sub-li {
   margin-bottom: 6px;
 }
+
+.faq-question {
+  color: #222 !important;
+}
+.footer, .footer__content {
+  color: #222 !important;
+}

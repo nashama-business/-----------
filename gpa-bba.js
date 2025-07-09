@@ -792,6 +792,17 @@ document.addEventListener('DOMContentLoaded', () => {
   injectGradingSystemFAQ();
 });
 
+// دعم الوصولية لزر الهامبرغر بلوحة المفاتيح
+const hamburger = document.querySelector('.hamburger');
+if (hamburger) {
+  hamburger.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      document.getElementById('burgerMenu').click();
+      e.preventDefault();
+    }
+  });
+}
+
 // دالة تقريب المعدل حسب نظام الجبر (تقريب لأقرب منزلتين مع جبر)
 function roundTo2WithJabr(num) {
   let n = Number(num);
